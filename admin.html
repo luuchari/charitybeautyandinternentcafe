@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <nav class="navbar">
+     <div class="logo">
+            <span class="royal">Royal</span><span class="it">-IT</span>
+        </div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="internet.html">Internet Cafe</a></li>
+<li><a href="beauty.html">Beauty Bar</a></li>
+<li><a href="foundation.html">Foundation</a></li>
+<li><a href="booking.html">Book</a></li>
+
+</ul>
+</div>
+</nav>
+</head>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Admin Panel</h2>
+
+    <a href="#" onclick="showSection('bookings')">Bookings</a>
+    <a href="#" onclick="showSection('payments')">Payments</a>
+    <a href="#" onclick="showSection('users')">Users</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Mobile menu -->
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <h1>Dashboard Overview</h1>
+
+    <!-- Dashboard -->
+    <div id="dashboard">
+
+      <div class="card-container">
+        <div class="card">
+          <h3>Total Bookings</h3>
+          <p id="bookings">4</p>
+        </div>
+
+        <div class="card">
+          <h3>Total Revenue</h3>
+          <p>R 4,250</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOOKINGS SECTION -->
+    <div id="bookings-section" class="section-content">
+      <h2>Bookings</h2>
+      <p>All customer bookings will appear here.</p>
+  <table class="admin-table">
+    <tr>
+<th>Name</th>
+<th>phone</th>
+<th>service</th>
+<th>Date Booked</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Charity</td>
+<td>079684496</td>
+<td>Nails & Braids</td>
+<td>15 march 2026</td>
+<td>15:30</td>
+<td><button>Delete</button></td>
+</tr>
+
+
+<tr>
+<td>Akani</td>
+<td>064265358</td>
+<td>printing</td>
+<td>17 march 2026</td>
+<td>13:30</td>
+<td><button>Delete</button></td>
+</tr>
+
+
+<tr>
+<td>Nwayitelo</td>
+<td>0817654321</td>
+<td>website consultatuon</td>
+<td>25 march 2026</td>
+<td>10:00</td>
+<td><button>Delete</button></td>
+</tr>
+  </table>
+    </div>
+
+    <!-- PAYMENTS SECTION -->
+    <d id="payments-section" class="section-content">
+      <h2>Payments</h2>
+      <p>Payment records will appear here.</p>
+      <table class="admin-table">
+
+<tr>
+<th>Name</th>
+<th>service</th>
+<th>paid/Not paid</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Charity</td>
+<td>Nails & Braids</td>
+<td>paid</td>
+<td>R750</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>Akani </td>
+<td>printing</td>
+<td>paid</td>
+<td>R500</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>nwayitelo </td>
+<td>website consultation</td>
+<td>paid</td>
+<td>R2500</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>Nhlavutelo </td>
+<td>make up</td>
+<td>paid</td>
+<td>R500</td>
+<td><button>Delete</button></td>
+</tr>
+</table>
+    
+    </div>
+
+    <!-- USERS SECTION -->
+    <div id="users-section" class="section-content">
+      <h2>Users</h2>
+      <p>Registered users will appear here.</p>
+      <h2>Users</h2>
+
+<table class="admin-table">
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Charity</td>
+<td>charity@email.com</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>Akani </td>
+<td>Akani@email.com</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>nwayitelo </td>
+<td>nwayitelo@email.com</td>
+<td><button>Delete</button></td>
+</tr>
+
+<tr>
+<td>Nhlavutelo </td>
+<td>Nhlavutelo@email.com</td>
+<td><button>Delete</button></td>
+</tr>
+
+</table>
+    </div>
+<h2>Bookings Overview</h2>
+
+<canvas id="bookingChart"></canvas>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+</script>
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- Business Info -->
+<div class="footer-section">
+
+<h3>Royal-IT</h3>
+
+<p>
+Technology • Beauty • Community Empowerment
+</p>
+
+</div>
+
+
+<!-- Quick Links -->
+<div class="footer-section">
+
+<h4>Quick Links</h4>
+
+<a href="index.html">Home</a>
+<a href="internet.html">Internet Cafe</a>
+<a href="beauty.html">Beauty Bar</a>
+<a href="foundation.html">Foundation</a>
+<a href="booking.html">Book Service</a>
+
+</div>
+
+
+<!-- Contact -->
+<div class="footer-section">
+
+<h4>Contact</h4>
+
+<p>Email: charity@gmail.com</p>
+<p>Phone: +27 96854496</p>
+
+</div>
+
+
+<!-- Social Media -->
+<div class="footer-section">
+
+<h4>Follow Us</h4>
+
+<div class="footer-social">
+
+<a href="https://facebook.com/charity mthombeni" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://instagram.com/luuchar" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/27796854496" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<p class="footer-bottom">
+© 2026 Royal-IT | Built by Charity Mthombeni
+</p>
+
+</footer>
+</body>
+</html>
